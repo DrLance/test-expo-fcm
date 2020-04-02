@@ -1,9 +1,8 @@
 {
   "expo": {
     "name": "Blank Template",
-    "slug": "TestExpoPush",    
+    "slug": "TestExpoPush",
     "privacy": "public",
-    "sdkVersion": "36.0.0",
     "platforms": [
       "ios",
       "android",
