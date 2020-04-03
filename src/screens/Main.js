@@ -10,10 +10,18 @@ const MESSAGE_ENPOINT = 'http://192.168.1.44:3000/message';
 const EXPO_ENDPOINT = 'https://exp.host/--/api/v2/push/send';
 
 export default class AppContainer extends React.Component {
+
+
 	state = {
 		expoPushToken: '',
 		notification: {},
 	};
+
+	componentDidUpdate() {
+		console.log('====================================');
+		console.log(this.props.navigation);
+		console.log('====================================');
+	}
 
 	registerForPushNotificationsAsync = async () => {
 		if (Constants.isDevice) {

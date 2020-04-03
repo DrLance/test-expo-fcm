@@ -6,6 +6,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import AppMain from '../screens/Main';
 import CustomDrawer from '../components/Drawer';
+import CustomRightHeader from '../components/CustomRightHeader';
 
 const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -13,8 +14,28 @@ const Tab = createBottomTabNavigator();
 
 function Root() {
 	return (
-		<Stack.Navigator>
-			<Stack.Screen name="Home" component={AppMain} />
+		<Stack.Navigator >
+			<Stack.Screen
+				name="Home"
+				component={AppMain}				
+				options={{
+					headerRight: props => <CustomRightHeader {...props} />,
+				}}
+			/>
+			<Stack.Screen
+				name="HomeStack"
+				component={AppMain}
+				options={{
+					headerRight: props => <CustomRightHeader {...props} />,
+				}}
+			/>
+			<Stack.Screen
+				name="HomeStack2"
+				component={AppMain}
+				options={{
+					headerRight: props => <CustomRightHeader {...props} />,
+				}}
+			/>
 		</Stack.Navigator>
 	);
 }

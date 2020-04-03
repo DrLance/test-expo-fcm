@@ -13,11 +13,11 @@ const styles = StyleSheet.create({
 	},
 });
 
-function CustomDrawerContent(props) {
+function CustomDrawerContent(props) {	
 	return (
 		<View style={styles.container}>
 			<View style={styles.content}>
-				<Text>Custom Category</Text>
+				<Text>Custom Category1</Text>
 				<Button title={'Go To Tabs'} onPress={() => props.navigation.navigate('Tabs')} />
 			</View>
 		</View>
