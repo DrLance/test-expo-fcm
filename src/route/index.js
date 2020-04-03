@@ -5,6 +5,7 @@ import { createDrawerNavigator } from '@react-navigation/drawer';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import AppMain from '../screens/Main';
+import CustomDrawer from '../components/Drawer';
 
 const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -22,9 +23,9 @@ function Tabs() {
 	return (
 		<Tab.Navigator>
 			<Tab.Screen name="Home" component={AppMain} />
-            <Tab.Screen name="Home1" component={AppMain} />
-            <Tab.Screen name="Home2" component={AppMain} />
-            <Tab.Screen name="Home3" component={AppMain} />
+			<Tab.Screen name="Home1" component={AppMain} />
+			<Tab.Screen name="Home2" component={AppMain} />
+			<Tab.Screen name="Home3" component={AppMain} />
 		</Tab.Navigator>
 	);
 }
@@ -33,7 +34,12 @@ export default class Router extends React.Component {
 	render() {
 		return (
 			<NavigationContainer>
-				<Drawer.Navigator drawerPosition={'right'} drawerType={'front'} edgeWidth={0}>
+				<Drawer.Navigator
+					drawerPosition={'right'}
+					drawerType={'front'}
+					edgeWidth={0}
+					drawerContent={props => <CustomDrawer {...props} />}
+				>
 					<Drawer.Screen name="Root" component={Root} />
 					<Drawer.Screen name="Tabs" component={Tabs} />
 				</Drawer.Navigator>
